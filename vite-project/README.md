@@ -1,75 +1,97 @@
-# React + TypeScript + Vite
+# Questlog 🎮
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En personlig spelbacklog där användaren kan hålla koll på spel som hen vill spela, spelar just nu, har klarat eller lagt ner.
 
-Currently, two official plugins are available:
+## Teknik och projektstruktur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- [x] React
+- [x] TypeScript
+- [x] Vite
+- [x] SCSS
+- [x] API-adress och eget handle: `elena`
+- [x] Skapa en TypeScript-typ för spel (`Game`)
+- [x] Skapa en API-fil (`gamesApi.ts`)
+- [x] Funktion för att hämta alla spel (`fetchGames`)
+- [x] Kontrollera `response.ok` vid API-anrop
+- [x] Skapa state för spelen med `useState`
+- [x] Hämta spel med `useEffect`
+- [x] Skapa en separat `GameCard`-komponent
+- [x] Skicka spelinformation till komponenten via props
+- [ ] React Router
+- [ ] Custom hooks (VG)
+- [ ] useLocalStorage för att spara filter (VG)
 
-## React Compiler
+## Funktioner
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [ ] Visa alla spel i en lista.
+- [ ] Filtrera spel efter status:
+  - [ ] All
+  - [ ] Want to play
+  - [ ] Playing
+  - [ ] Completed
+  - [ ] Dropped
+- [ ] Öppna ett enskilt spel och visa:
+  - [ ] Omslagsbild
+  - [ ] Plattform
+  - [ ] Betyg
+  - [ ] Anteckningar
+- [ ] Lägga till ett nytt spel.
+- [ ] Ändra information om ett spel.
+- [ ] Ta bort ett spel.
 
-## Expanding the ESLint configuration
+## API och CRUD
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [x] GET `/games` – hämta alla spel
+- [ ] GET `/games?status=playing` – hämta spel med en viss status
+- [ ] GET `/games/:id` – hämta ett enskilt spel
+- [ ] POST `/games` – skapa ett nytt spel
+- [ ] PATCH `/games/:id` – uppdatera ett spel
+- [ ] DELETE `/games/:id` – ta bort ett spel
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Sidor och routing
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- [ ] Lista med alla spel
+- [ ] Enskild spelsida (`/games/:id`)
+- [ ] Formulär för att lägga till spel
+- [ ] 404-sida
+- [ ] React Router med layout och navigering
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Laddning och felhantering
 
-```
+- [ ] Visa laddningsindikator medan spel hämtas
+- [ ] Visa laddningsindikator på enskild spelsida
+- [x] Kontrollera `response.ok` vid hämtning av spel
+- [ ] Visa felmeddelande om något går fel
+- [ ] Hantera fel vid övriga API-anrop
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Design och extra funktioner
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- [ ] Bestämma appens visuella stil
+- [ ] Skapa layout för spellistan
+- [ ] Skapa design för spelkorten
+- [ ] Göra appen responsiv
+- [ ] Eventuella egna funktioner
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Publicering och inlämning
 
-```
+- [ ] Deploya appen på Vercel
+- [ ] Skriva färdig README
+- [ ] Kontrollera att alla funktioner fungerar
+- [ ] Kontrollera att API-anropen fungerar i den publicerade appen
+
+## Bedömning
+
+### G
+
+- [ ] CRUD fungerar
+- [ ] Komponenter med props
+- [ ] Routing och navigering
+- [ ] Laddning och felhantering
+- [ ] TypeScript-typ för spel
+- [ ] Publicerad app på Vercel
+
+### VG
+
+- [ ] Allt som krävs för G
+- [ ] Custom hooks
+- [ ] Sparat filter med `useLocalStorage`

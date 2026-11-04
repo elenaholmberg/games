@@ -25,11 +25,11 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 - [ ] Visa alla spel i en lista.
 - [ ] Filtrera spel efter status:
-  - [ ] All
-  - [ ] Want to play
-  - [ ] Playing
-  - [ ] Completed
-  - [ ] Dropped
+  - [x] All
+  - [x] Want to play
+  - [x] Playing
+  - [x] Completed
+  - [x] Dropped
 - [ ] Öppna ett enskilt spel och visa:
   - [ ] Omslagsbild
   - [ ] Plattform

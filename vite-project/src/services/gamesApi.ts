@@ -7,5 +7,7 @@ export const fetchGames = async (): Promise<Game[]> => {
   if (!response.ok) {
     throw new Error('Failed to fetch games');
   }
-  return response.json();
+
+  const data: Game[] = await response.json();
+  return data;
 };

@@ -42,9 +42,9 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 ## API och CRUD
 
 - [x] GET `/games` – hämta alla spel
-- [ ] GET `/games?status=playing` – hämta spel med en viss status
-- [ ] GET `/games/:id` – hämta ett enskilt spel
-- [ ] POST `/games` – skapa ett nytt spel
+- [x] GET `/games?status=playing` – hämta spel med en viss status
+- [x] GET `/games/:id` – hämta ett enskilt spel
+- [x] POST `/games` – skapa ett nytt spel
 - [ ] PATCH `/games/:id` – uppdatera ett spel
 - [ ] DELETE `/games/:id` – ta bort ett spel
 

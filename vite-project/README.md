@@ -35,9 +35,9 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
   - [x] Plattform
   - [x] Betyg
   - [x] Anteckningar
-- [ ] Lägga till ett nytt spel.
-- [ ] Ändra information om ett spel.
-- [ ] Ta bort ett spel.
+- [x] Lägga till ett nytt spel.
+- [x] Ändra information om ett spel.
+- [x] Ta bort ett spel.
 
 ## API och CRUD
 
@@ -50,8 +50,8 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 ## Sidor och routing
 
-- [ ] Lista med alla spel
-- [ ] Enskild spelsida (`/games/:id`)
+- [x] Lista med alla spel
+- [x] Enskild spelsida (`/games/:id`)
 - [ ] Formulär för att lägga till spel
 - [ ] 404-sida
 - [ ] React Router med layout och navigering

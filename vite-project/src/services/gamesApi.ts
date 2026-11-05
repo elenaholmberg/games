@@ -21,3 +21,24 @@ export const fetchGameById = async (gameId: string): Promise<Game> => {
   const data: Game = await response.json();
   return data;
 };
+
+export const addGame = async (
+  newGame: Omit<Game, 'id' | 'createdAt' | 'updatedAt'>,
+): Promise<Game> => {
+  const response = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newGame),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    console.log('API error:', errorText);
+    throw new Error('Failed to add game');
+  }
+
+  const data: Game = await response.json();
+  return data;
+};

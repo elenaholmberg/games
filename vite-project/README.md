@@ -54,7 +54,7 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] Enskild spelsida (`/games/:id`)
 - [ ] Formulär för att lägga till spel
 - [x] 404-sida
-- [ ] React Router med layout och navigering
+- [x] React Router med layout och navigering
 
 ## Laddning och felhantering
 

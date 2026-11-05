@@ -11,3 +11,13 @@ export const fetchGames = async (): Promise<Game[]> => {
   const data: Game[] = await response.json();
   return data;
 };
+
+export const fetchGameById = async (gameId: string): Promise<Game> => {
+  const response = await fetch(`${API_URL}/${gameId}`);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch game with ID: ${gameId}`);
+  }
+
+  const data: Game = await response.json();
+  return data;
+};

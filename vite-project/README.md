@@ -17,7 +17,7 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] Hämta spel med `useEffect`
 - [x] Skapa en separat `GameCard`-komponent
 - [x] Skicka spelinformation till komponenten via props
-- [ ] React Router
+- [x] React Router
 - [ ] Custom hooks (VG)
 - [ ] useLocalStorage för att spara filter (VG)
 
@@ -30,11 +30,11 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
   - [x] Playing
   - [x] Completed
   - [x] Dropped
-- [ ] Öppna ett enskilt spel och visa:
-  - [ ] Omslagsbild
-  - [ ] Plattform
-  - [ ] Betyg
-  - [ ] Anteckningar
+- [x] Öppna ett enskilt spel och visa:
+  - [x] Omslagsbild
+  - [x] Plattform
+  - [x] Betyg
+  - [x] Anteckningar
 - [ ] Lägga till ett nytt spel.
 - [ ] Ändra information om ett spel.
 - [ ] Ta bort ett spel.

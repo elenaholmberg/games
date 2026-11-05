@@ -1,13 +1,16 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { addGame } from '../services/gamesApi';
 
 function AddGamePage() {
+  const navigate = useNavigate();
   const [title, setTitle] = useState('');
   const [coverUrl, setCoverUrl] = useState('');
   const [platform, setPlatform] = useState('');
   const [status, setStatus] = useState('want');
   const [rating, setRating] = useState(0);
   const [notes, setNotes] = useState('');
+  const [isSuccessVisible, setIsSuccessVisible] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,6 +31,7 @@ function AddGamePage() {
     setStatus('want to play');
     setRating(0);
     setNotes('');
+    setIsSuccessVisible(true);
   };
 
   return (
@@ -90,6 +94,23 @@ function AddGamePage() {
         ></textarea>
         <button type="submit">Add Game</button>
       </form>
+
+      {isSuccessVisible && (
+        <div className="success-modal-backdrop">
+          <div
+            className="success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="success-modal-title"
+          >
+            <h2 id="success-modal-title">Game successfully added</h2>
+            <p>Your game has been added to your collection.</p>
+            <button type="button" onClick={() => navigate('/')}>
+              Go to home
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -23,14 +23,17 @@ function GamesPage() {
   return (
     <div className="games-page">
       <h1>My Games</h1>
-
-      <button onClick={() => setSelectedStatus('all')}>All</button>
-      <button onClick={() => setSelectedStatus('want to play')}>
-        Want to play
-      </button>
-      <button onClick={() => setSelectedStatus('playing')}>Playing</button>
-      <button onClick={() => setSelectedStatus('completed')}>Completed</button>
-      <button onClick={() => setSelectedStatus('dropped')}>Dropped</button>
+      <div>
+        <button onClick={() => setSelectedStatus('all')}>All</button>
+        <button onClick={() => setSelectedStatus('want to play')}>
+          Want to play
+        </button>
+        <button onClick={() => setSelectedStatus('playing')}>Playing</button>
+        <button onClick={() => setSelectedStatus('completed')}>
+          Completed
+        </button>
+        <button onClick={() => setSelectedStatus('dropped')}>Dropped</button>
+      </div>
 
       {filteredGames.map((currentGame) => (
         <GameCard key={currentGame.id} gameData={currentGame} />

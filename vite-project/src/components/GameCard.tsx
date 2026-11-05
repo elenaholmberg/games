@@ -1,4 +1,5 @@
 import type { Game } from '../types/game';
+import { Link } from 'react-router';
 
 type GameCardProps = {
   gameData: Game;
@@ -6,14 +7,15 @@ type GameCardProps = {
 
 function GameCard({ gameData }: GameCardProps) {
   return (
-    <div className="game-card">
+    <Link to={`/games/${gameData.id}`} className="game-card-link">
       <img src={gameData.coverUrl} alt={gameData.title} />
 
       <h2>{gameData.title}</h2>
       <p>{gameData.platform}</p>
       <p>{gameData.status}</p>
       <p>Rating: {gameData.rating ?? 'Not rated'}</p>
-    </div>
+      <p>Notes: {gameData.notes}</p>
+    </Link>
   );
 }
 

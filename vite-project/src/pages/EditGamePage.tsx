@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 import type { Game } from '../types/game';
-import { fetchGameById } from '../services/gamesApi';
+import { fetchGameById, updateGame } from '../services/gamesApi';
 
 function EditGamePage() {
+  const navigate = useNavigate();
   const { gameId } = useParams();
   const [gameData, setGameData] = useState<Game | null>(null);
   const [status, setStatus] = useState('');
@@ -24,6 +25,20 @@ function EditGamePage() {
     loadGame();
   }, [gameId]);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!gameId) return;
+
+    await updateGame(gameId, {
+      status,
+      rating,
+      notes,
+    });
+
+    navigate(`/games/${gameId}`);
+  };
+
   if (!gameData) {
     return <p>Loading game...</p>;
   }
@@ -32,7 +47,7 @@ function EditGamePage() {
     <div>
       <h1>Edit Game: {gameData.title}</h1>
       {
-        <form>
+        <form onSubmit={handleSubmit}>
           <label htmlFor="status">Status:</label>
           <select
             id="status"
@@ -62,6 +77,7 @@ function EditGamePage() {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
           />
+          <button type="submit">Save Changes</button>
         </form>
       }
     </div>

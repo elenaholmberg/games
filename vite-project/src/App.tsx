@@ -4,6 +4,7 @@ import GamesPage from './pages/GamesPage';
 import GameDetailsPage from './pages/GameDetailsPage';
 import AddGamePage from './pages/AddGamePage';
 import NotFoundPage from './pages/NotFoundPage';
+import EditGamePage from './pages/EditGamePage';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route index element={<GamesPage />} />
         <Route path="games/:gameId" element={<GameDetailsPage />} />
         <Route path="add-game" element={<AddGamePage />} />
+        <Route path="games/:gameId/edit" element={<EditGamePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>

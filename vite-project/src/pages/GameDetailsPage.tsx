@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { Link, useParams } from 'react-router';
 import type { Game } from '../types/game';
 import { fetchGameById } from '../services/gamesApi';
 
@@ -29,6 +29,8 @@ function GameDetailsPage() {
       <p>Platform: {gameData.platform}</p>
       <p>Rating: {gameData.rating ?? 'Not rated'}</p>
       <p>Notes: {gameData.notes}</p>
+
+      <Link to={`/games/${gameData.id}/edit`}>Edit Game</Link>
     </div>
   );
 }

@@ -42,3 +42,23 @@ export const addGame = async (
   const data: Game = await response.json();
   return data;
 };
+
+export const updateGame = async (
+  gameId: string,
+  updatedGame: Partial<Omit<Game, 'id' | 'createdAt' | 'updatedAt'>>,
+): Promise<Game> => {
+  const response = await fetch(`${API_URL}/${gameId}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updatedGame),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to update game with ID: ${gameId}`);
+  }
+
+  const data: Game = await response.json();
+  return data;
+};

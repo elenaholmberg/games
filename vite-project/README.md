@@ -23,8 +23,8 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 ## Funktioner
 
-- [ ] Visa alla spel i en lista.
-- [ ] Filtrera spel efter status:
+- [x] Visa alla spel i en lista.
+- [x] Filtrera spel efter status:
   - [x] All
   - [x] Want to play
   - [x] Playing

@@ -87,7 +87,7 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] Komponenter med props
 - [x] Routing och navigering
 - [x] Laddning och felhantering
-- [ ] TypeScript-typ för spel
+- [x] TypeScript-typ för spel
 - [ ] Publicerad app på Vercel
 
 ### VG

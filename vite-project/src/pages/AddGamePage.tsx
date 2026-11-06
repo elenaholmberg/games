@@ -11,32 +11,39 @@ function AddGamePage() {
   const [rating, setRating] = useState(0);
   const [notes, setNotes] = useState('');
   const [isSuccessVisible, setIsSuccessVisible] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    await addGame({
-      title,
-      coverUrl,
-      platform,
-      status,
-      rating,
-      notes,
-    });
+    setError('');
 
-    // Reset form fields after submission
-    setTitle('');
-    setCoverUrl('');
-    setPlatform('');
-    setStatus('want to play');
-    setRating(0);
-    setNotes('');
-    setIsSuccessVisible(true);
+    try {
+      await addGame({
+        title,
+        coverUrl,
+        platform,
+        status,
+        rating,
+        notes,
+      });
+
+      setTitle('');
+      setCoverUrl('');
+      setPlatform('');
+      setStatus('want');
+      setRating(0);
+      setNotes('');
+      setIsSuccessVisible(true);
+    } catch (error) {
+      setError('Could not add game. Please try again.');
+    }
   };
 
   return (
     <div className="add-game-page">
       <h1>Add Game</h1>
+      {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
@@ -69,7 +76,7 @@ function AddGamePage() {
           value={status}
           onChange={(e) => setStatus(e.target.value)}
         >
-          <option value="want to play">Want to play</option>
+          <option value="want">Want to play</option>
           <option value="playing">Playing</option>
           <option value="completed">Completed</option>
           <option value="dropped">Dropped</option>

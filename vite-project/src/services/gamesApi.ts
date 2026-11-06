@@ -2,8 +2,13 @@ import type { Game } from '../types/game';
 
 const API_URL = 'https://questlog-api.vercel.app/api/elena/games';
 
-export const fetchGames = async (): Promise<Game[]> => {
-  const response = await fetch(API_URL);
+// GET: Fetch all games or filter by status
+export const fetchGames = async (status?: string): Promise<Game[]> => {
+  const url =
+    status && status !== 'all' ? `${API_URL}?status=${status}` : API_URL;
+
+  const response = await fetch(url);
+
   if (!response.ok) {
     throw new Error('Failed to fetch games');
   }
@@ -12,8 +17,10 @@ export const fetchGames = async (): Promise<Game[]> => {
   return data;
 };
 
+// GET: Fetch one game by ID
 export const fetchGameById = async (gameId: string): Promise<Game> => {
   const response = await fetch(`${API_URL}/${gameId}`);
+
   if (!response.ok) {
     throw new Error(`Failed to fetch game with ID: ${gameId}`);
   }
@@ -22,6 +29,7 @@ export const fetchGameById = async (gameId: string): Promise<Game> => {
   return data;
 };
 
+// POST: Add a new game
 export const addGame = async (
   newGame: Omit<Game, 'id' | 'createdAt' | 'updatedAt'>,
 ): Promise<Game> => {
@@ -43,6 +51,7 @@ export const addGame = async (
   return data;
 };
 
+// PATCH: Update an existing game
 export const updateGame = async (
   gameId: string,
   updatedGame: Partial<Omit<Game, 'id' | 'createdAt' | 'updatedAt'>>,
@@ -56,19 +65,20 @@ export const updateGame = async (
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to update game with ID: ${gameId}`);
+    throw new Error('Failed to update game');
   }
 
   const data: Game = await response.json();
   return data;
 };
 
+// DELETE: Delete a game
 export const deleteGame = async (gameId: string): Promise<void> => {
   const response = await fetch(`${API_URL}/${gameId}`, {
     method: 'DELETE',
   });
 
   if (!response.ok) {
-    throw new Error(`Failed to delete game with ID: ${gameId}`);
+    throw new Error('Failed to delete game');
   }
 };

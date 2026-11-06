@@ -18,8 +18,8 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] Skapa en separat `GameCard`-komponent
 - [x] Skicka spelinformation till komponenten via props
 - [x] React Router
-- [ ] Custom hooks (VG)
-- [ ] useLocalStorage för att spara filter (VG)
+- [x] Custom hooks (VG)
+- [x] useLocalStorage för att spara filter (VG)
 
 ## Funktioner
 
@@ -62,7 +62,7 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] Visa laddningsindikator på enskild spelsida
 - [x] Kontrollera `response.ok` vid hämtning av spel
 - [x] Visa felmeddelande om något går fel
-- [ ] Hantera fel vid övriga API-anrop
+- [x] Hantera fel vid övriga API-anrop
 
 ## Design och extra funktioner
 
@@ -92,6 +92,6 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 ### VG
 
-- [ ] Allt som krävs för G
-- [ ] Custom hooks
-- [ ] Sparat filter med `useLocalStorage`
+- [x] Allt som krävs för G
+- [x] Custom hooks
+- [x] Sparat filter med `useLocalStorage`

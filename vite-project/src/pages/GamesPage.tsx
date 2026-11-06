@@ -3,10 +3,14 @@ import { Link } from 'react-router';
 import type { Game } from '../types/game';
 import { fetchGames } from '../services/gamesApi';
 import GameCard from '../components/GameCard';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 function GamesPage() {
   const [games, setGames] = useState<Game[]>([]);
-  const [selectedStatus, setSelectedStatus] = useState('all');
+  const [selectedStatus, setSelectedStatus] = useLocalStorage<string>(
+    'questlog-status-filter',
+    'all',
+  );
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -49,7 +53,6 @@ function GamesPage() {
       </div>
 
       {isLoading && <p>Loading games...</p>}
-
       {error && <p>{error}</p>}
 
       {!isLoading && !error && games.length === 0 && <p>No games found.</p>}

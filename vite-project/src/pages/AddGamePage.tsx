@@ -4,6 +4,7 @@ import { addGame } from '../services/gamesApi';
 
 function AddGamePage() {
   const navigate = useNavigate();
+
   const [title, setTitle] = useState('');
   const [coverUrl, setCoverUrl] = useState('');
   const [platform, setPlatform] = useState('');
@@ -29,18 +30,11 @@ function AddGamePage() {
         notes,
       });
 
-      setTitle('');
-      setCoverUrl('');
-      setPlatform('');
-      setStatus('want');
-      setRating(1);
-      setNotes('');
+      await new Promise((resolve) => setTimeout(resolve, 2000));
 
       navigate('/');
-    } catch (error) {
-      console.error('Error adding game:', error);
+    } catch (caughtError) {
       setError('Could not add game. Please try again.');
-    } finally {
       setIsSaving(false);
     }
   };
@@ -48,6 +42,7 @@ function AddGamePage() {
   return (
     <div className="add-game-page">
       <h1>Add Game</h1>
+
       {error && <p>{error}</p>}
 
       <form onSubmit={handleSubmit}>
@@ -58,6 +53,7 @@ function AddGamePage() {
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          required
         />
 
         <label htmlFor="coverUrl">Cover URL:</label>
@@ -76,6 +72,7 @@ function AddGamePage() {
           name="platform"
           value={platform}
           onChange={(e) => setPlatform(e.target.value)}
+          required
         />
 
         <label htmlFor="status">Status:</label>
@@ -109,12 +106,21 @@ function AddGamePage() {
           name="notes"
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
-        ></textarea>
+        />
 
         <button type="submit" disabled={isSaving}>
-          {isSaving ? 'Adding...' : 'Add Game'}
+          Add Game
         </button>
       </form>
+
+      {isSaving && (
+        <div className="loading-modal-backdrop">
+          <div className="loading-modal" role="alert" aria-live="assertive">
+            <h2>Adding game...</h2>
+            <p>Please wait while your game is being added.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

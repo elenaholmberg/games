@@ -69,3 +69,20 @@ form {
     }
   }
 }
+
+.loading-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-modal {
+  background: #e8e6dd;
+  padding: 40px;
+  text-align: center;
+  min-width: 280px;
+}

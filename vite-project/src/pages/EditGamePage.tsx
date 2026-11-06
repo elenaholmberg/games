@@ -47,10 +47,11 @@ function EditGamePage() {
         ...(rating !== '' ? { rating } : {}),
       });
 
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
       navigate('/');
     } catch (caughtError) {
       setError('Could not save changes. Please try again.');
-    } finally {
       setIsSaving(false);
     }
   };
@@ -64,7 +65,7 @@ function EditGamePage() {
   }
 
   return (
-    <div>
+    <div className="edit-game-page">
       <h1>Edit Game: {gameData.title}</h1>
 
       {error && <p>{error}</p>}
@@ -106,9 +107,18 @@ function EditGamePage() {
         />
 
         <button type="submit" disabled={isSaving}>
-          {isSaving ? 'Editing...' : 'Save Changes'}
+          Save Changes
         </button>
       </form>
+
+      {isSaving && (
+        <div className="loading-modal-backdrop">
+          <div className="loading-modal" role="alert" aria-live="assertive">
+            <h2>Editing game...</h2>
+            <p>Please wait while your game is being updated.</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

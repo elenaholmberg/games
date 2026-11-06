@@ -62,3 +62,13 @@ export const updateGame = async (
   const data: Game = await response.json();
   return data;
 };
+
+export const deleteGame = async (gameId: string): Promise<void> => {
+  const response = await fetch(`${API_URL}/${gameId}`, {
+    method: 'DELETE',
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to delete game with ID: ${gameId}`);
+  }
+};

@@ -76,7 +76,7 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 - [ ] Deploya appen på Vercel
 - [ ] Skriva färdig README
-- [ ] Kontrollera att alla funktioner fungerar
+- [x] Kontrollera att alla funktioner fungerar
 - [ ] Kontrollera att API-anropen fungerar i den publicerade appen
 
 ## Bedömning

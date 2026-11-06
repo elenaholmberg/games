@@ -8,19 +8,25 @@ function EditGamePage() {
   const { gameId } = useParams();
   const [gameData, setGameData] = useState<Game | null>(null);
   const [status, setStatus] = useState('');
+  const [error, setError] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
   const [rating, setRating] = useState(0);
   const [notes, setNotes] = useState('');
 
   useEffect(() => {
     const loadGame = async () => {
-      if (!gameId) return;
+  if (!gameId) return;
 
-      const data = await fetchGameById(gameId);
-      setGameData(data);
-      setStatus(data.status);
-      setRating(data.rating ?? 0);
-      setNotes(data.notes ?? '');
-    };
+  try {
+    const data = await fetchGameById(gameId);
+    setGameData(data);
+    setStatus(data.status);
+    setRating(data.rating ?? 0);
+    setNotes(data.notes ?? '');
+  } catch (caughtError) {
+    setError('Could not load this game. Please try again.');
+  }
+};
 
     loadGame();
   }, [gameId]);
@@ -30,15 +36,23 @@ function EditGamePage() {
 
     if (!gameId) return;
 
-    await updateGame(gameId, {
-      status,
-      rating,
-      notes,
-    });
+    setIsSaving(true);
+    setError('');
 
-    navigate(`/games/${gameId}`);
+    try {
+      await updateGame(gameId, {
+        status,
+        rating,
+        notes,
+      });
+
+      navigate(`/games/${gameId}`);
+    } catch (caughtError) {
+      setError('Could not save changes. Please try again.');
+    } finally {
+      setIsSaving(false);
+    }
   };
-
   if (!gameData) {
     return <p>Loading game...</p>;
   }
@@ -46,6 +60,7 @@ function EditGamePage() {
   return (
     <div>
       <h1>Edit Game: {gameData.title}</h1>
+      {error && <p>{error}</p>}
       {
         <form onSubmit={handleSubmit}>
           <label htmlFor="status">Status:</label>
@@ -78,7 +93,9 @@ function EditGamePage() {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
           />
-          <button type="submit">Save Changes</button>
+          <button type="submit" disabled={isSaving}>
+            {isSaving ? 'Saving...' : 'Save Changes'}
+          </button>
         </form>
       }
     </div>

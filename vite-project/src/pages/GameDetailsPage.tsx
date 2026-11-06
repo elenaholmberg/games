@@ -6,6 +6,7 @@ import { deleteGame, fetchGameById } from '../services/gamesApi';
 function GameDetailsPage() {
   const { gameId } = useParams();
   const [gameData, setGameData] = useState<Game | null>(null);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   const handleDelete = async () => {
     if (!gameId) return;
@@ -17,12 +18,20 @@ function GameDetailsPage() {
     const loadGame = async () => {
       if (!gameId) return;
 
-      const data = await fetchGameById(gameId);
-      setGameData(data);
+      try {
+        const data = await fetchGameById(gameId);
+        setGameData(data);
+      } catch (caughtError) {
+        setError('Could not load this game. Please try again.');
+      }
     };
 
     loadGame();
   }, [gameId]);
+
+  if (error) {
+    return <p>{error}</p>;
+  }
 
   if (!gameData) {
     return <p>Loading game...</p>;

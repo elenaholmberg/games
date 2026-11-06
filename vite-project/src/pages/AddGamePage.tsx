@@ -8,15 +8,16 @@ function AddGamePage() {
   const [coverUrl, setCoverUrl] = useState('');
   const [platform, setPlatform] = useState('');
   const [status, setStatus] = useState('want');
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(1);
   const [notes, setNotes] = useState('');
-  const [isSuccessVisible, setIsSuccessVisible] = useState(false);
   const [error, setError] = useState('');
+  const [isSaving, setIsSaving] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     setError('');
+    setIsSaving(true);
 
     try {
       await addGame({
@@ -32,11 +33,15 @@ function AddGamePage() {
       setCoverUrl('');
       setPlatform('');
       setStatus('want');
-      setRating(0);
+      setRating(1);
       setNotes('');
-      setIsSuccessVisible(true);
+
+      navigate('/');
     } catch (error) {
+      console.error('Error adding game:', error);
       setError('Could not add game. Please try again.');
+    } finally {
+      setIsSaving(false);
     }
   };
 
@@ -44,6 +49,7 @@ function AddGamePage() {
     <div className="add-game-page">
       <h1>Add Game</h1>
       {error && <p>{error}</p>}
+
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title:</label>
         <input
@@ -53,6 +59,7 @@ function AddGamePage() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
+
         <label htmlFor="coverUrl">Cover URL:</label>
         <input
           type="url"
@@ -61,6 +68,7 @@ function AddGamePage() {
           value={coverUrl}
           onChange={(e) => setCoverUrl(e.target.value)}
         />
+
         <label htmlFor="platform">Platform:</label>
         <input
           type="text"
@@ -69,6 +77,7 @@ function AddGamePage() {
           value={platform}
           onChange={(e) => setPlatform(e.target.value)}
         />
+
         <label htmlFor="status">Status:</label>
         <select
           id="status"
@@ -81,17 +90,19 @@ function AddGamePage() {
           <option value="completed">Completed</option>
           <option value="dropped">Dropped</option>
         </select>
+
         <label htmlFor="rating">Rating:</label>
         <input
           type="number"
           id="rating"
           name="rating"
-          min="0"
-          max="10"
+          min="1"
+          max="5"
           step="1"
           value={rating}
           onChange={(e) => setRating(Number(e.target.value))}
         />
+
         <label htmlFor="notes">Notes:</label>
         <textarea
           id="notes"
@@ -99,25 +110,11 @@ function AddGamePage() {
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
         ></textarea>
-        <button type="submit">Add Game</button>
-      </form>
 
-      {isSuccessVisible && (
-        <div className="success-modal-backdrop">
-          <div
-            className="success-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="success-modal-title"
-          >
-            <h2 id="success-modal-title">Game successfully added</h2>
-            <p>Your game has been added to your collection.</p>
-            <button type="button" onClick={() => navigate('/')}>
-              Go to home
-            </button>
-          </div>
-        </div>
-      )}
+        <button type="submit" disabled={isSaving}>
+          {isSaving ? 'Adding...' : 'Add Game'}
+        </button>
+      </form>
     </div>
   );
 }

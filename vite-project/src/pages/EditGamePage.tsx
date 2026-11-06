@@ -10,23 +10,23 @@ function EditGamePage() {
   const [status, setStatus] = useState('');
   const [error, setError] = useState('');
   const [isSaving, setIsSaving] = useState(false);
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(1);
   const [notes, setNotes] = useState('');
 
   useEffect(() => {
     const loadGame = async () => {
-  if (!gameId) return;
+      if (!gameId) return;
 
-  try {
-    const data = await fetchGameById(gameId);
-    setGameData(data);
-    setStatus(data.status);
-    setRating(data.rating ?? 0);
-    setNotes(data.notes ?? '');
-  } catch (caughtError) {
-    setError('Could not load this game. Please try again.');
-  }
-};
+      try {
+        const data = await fetchGameById(gameId);
+        setGameData(data);
+        setStatus(data.status);
+        setRating(data.rating ?? 1);
+        setNotes(data.notes ?? '');
+      } catch (caughtError) {
+        setError('Could not load this game. Please try again.');
+      }
+    };
 
     loadGame();
   }, [gameId]);
@@ -80,8 +80,8 @@ function EditGamePage() {
             type="number"
             id="rating"
             name="rating"
-            min="0"
-            max="10"
+            min="1"
+            max="5"
             step="1"
             value={rating}
             onChange={(e) => setRating(Number(e.target.value))}

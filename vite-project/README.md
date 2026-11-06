@@ -45,8 +45,8 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] GET `/games?status=playing` – hämta spel med en viss status
 - [x] GET `/games/:id` – hämta ett enskilt spel
 - [x] POST `/games` – skapa ett nytt spel
-- [ ] PATCH `/games/:id` – uppdatera ett spel
-- [ ] DELETE `/games/:id` – ta bort ett spel
+- [x] PATCH `/games/:id` – uppdatera ett spel
+- [x] DELETE `/games/:id` – ta bort ett spel
 
 ## Sidor och routing
 
@@ -58,8 +58,8 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 ## Laddning och felhantering
 
-- [ ] Visa laddningsindikator medan spel hämtas
-- [ ] Visa laddningsindikator på enskild spelsida
+- [x] Visa laddningsindikator medan spel hämtas
+- [x] Visa laddningsindikator på enskild spelsida
 - [x] Kontrollera `response.ok` vid hämtning av spel
 - [ ] Visa felmeddelande om något går fel
 - [ ] Hantera fel vid övriga API-anrop
@@ -83,9 +83,9 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 ### G
 
-- [ ] CRUD fungerar
+- [x] CRUD fungerar
 - [ ] Komponenter med props
-- [ ] Routing och navigering
+- [x] Routing och navigering
 - [ ] Laddning och felhantering
 - [ ] TypeScript-typ för spel
 - [ ] Publicerad app på Vercel

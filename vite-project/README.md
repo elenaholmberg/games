@@ -61,7 +61,7 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] Visa laddningsindikator medan spel hämtas
 - [x] Visa laddningsindikator på enskild spelsida
 - [x] Kontrollera `response.ok` vid hämtning av spel
-- [ ] Visa felmeddelande om något går fel
+- [x] Visa felmeddelande om något går fel
 - [ ] Hantera fel vid övriga API-anrop
 
 ## Design och extra funktioner
@@ -84,9 +84,9 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 ### G
 
 - [x] CRUD fungerar
-- [ ] Komponenter med props
+- [x] Komponenter med props
 - [x] Routing och navigering
-- [ ] Laddning och felhantering
+- [x] Laddning och felhantering
 - [ ] TypeScript-typ för spel
 - [ ] Publicerad app på Vercel
 

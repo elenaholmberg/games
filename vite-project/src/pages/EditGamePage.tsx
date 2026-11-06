@@ -67,6 +67,7 @@ function EditGamePage() {
             name="rating"
             min="0"
             max="10"
+            step="1"
             value={rating}
             onChange={(e) => setRating(Number(e.target.value))}
           />

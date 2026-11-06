@@ -11,8 +11,12 @@ function GameDetailsPage() {
   const handleDelete = async () => {
     if (!gameId) return;
 
-    await deleteGame(gameId);
-    navigate('/');
+    try {
+      await deleteGame(gameId);
+      navigate('/');
+    } catch (caughtError) {
+      setError('Could not delete this game. Please try again.');
+    }
   };
   useEffect(() => {
     const loadGame = async () => {

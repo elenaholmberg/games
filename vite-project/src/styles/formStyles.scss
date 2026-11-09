@@ -1,4 +1,8 @@
+@use './variables' as *;
+
 form {
+  margin-left: 20px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -12,7 +16,7 @@ form {
 
   button {
     padding: 8px;
-    background-color: #007bff;
+    background-color: $blue;
     color: white;
     border: none;
     border-radius: 4px;
@@ -22,4 +26,9 @@ form {
       background-color: #0056b3;
     }
   }
+}
+
+.add-game-page > h1,
+.edit-game-page > h1 {
+  margin-left: 20px;
 }

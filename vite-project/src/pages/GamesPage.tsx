@@ -35,6 +35,15 @@ function GamesPage() {
   return (
     <div className="games-page">
       <h1>Let's-a go!</h1>
+      <h2>
+        It's-a time to jump into your very own Mushroom Kingdom! 🍄 Keep track
+        of all your Mario adventures, from racing down Rainbow Road to rescuing
+        Princess Peach. Add games to your wishlist, keep tabs on your current
+        quests, rate your victories and save your gaming memories. Whether
+        you've collected every star or still have worlds to conquer, this is
+        your home for all things Mario!
+      </h2>
+      <h3>Let's-a go! ⭐</h3>
 
       <div className="status-filter">
         <button

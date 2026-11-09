@@ -16,10 +16,29 @@ body,
   background-color: $cream;
 }
 
+h1 {
+  font-family: 'Bungee Tint', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
-
-h2 {
+h3,
+h2,
+.header {
+  font-size: 1.8rem;
+  font-family: 'Jersey 10', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $green;
   margin-top: 0;
+}
+
+h2,
+.header {
+  font-size: 1.2rem;
+  color: $dark;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 button {
@@ -36,6 +55,5 @@ button {
 
   &.active {
     transform: scale(1.3);
-   
   }
 }

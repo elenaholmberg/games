@@ -16,6 +16,8 @@ body,
   background-color: $cream;
 }
 
+
+
 h2 {
   margin-top: 0;
 }
@@ -34,5 +36,6 @@ button {
 
   &.active {
     transform: scale(1.3);
+   
   }
 }

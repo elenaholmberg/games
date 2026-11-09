@@ -5,13 +5,15 @@
 @use './loadingMessage.scss' as *;
 @use './header.scss' as *;
 
-body {
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  overflow-x: hidden;
   font-family: $font-body;
   background-color: $cream;
-}
-#root {
-  margin: 20px;
 }
 
 h2 {
@@ -21,7 +23,6 @@ h2 {
 button {
   background-color: transparent;
   color: $button-color;
-  padding: $button-padding;
   border: none;
   border-radius: $button-radius;
   cursor: pointer;
@@ -32,6 +33,6 @@ button {
   }
 
   &.active {
-    transform: scale(1.5);
+    transform: scale(1.3);
   }
 }

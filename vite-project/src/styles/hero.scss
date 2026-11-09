@@ -8,19 +8,38 @@
 
 .status-filter {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: left;
+  width: 100%;
   margin-bottom: 16px;
-  gap: 8px;
+
+  button {
+    padding: 0;
+    margin: 0;
+    flex: 0 0 60px;
+    min-width: 0;
+    max-width: 120px;
+  }
 }
 
 .mario-button {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
 @media (min-width: 480px) {
   .games-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .status-filter button {
+    flex: 1 1 80px;
+    max-width: calc(538px / 5);
+  }
+
+  .status-filter .mario-button {
+    width: 60px;
+    height: 60px;
   }
 }
 

@@ -36,20 +36,57 @@ function GamesPage() {
     <div className="games-page">
       <h1>Let's-a go!</h1>
 
-      <div className="add-game-button">
-        <Link to="/add-game">
-          <button>Add Game</button>
-        </Link>
-      </div>
-
-      <div>
-        <button onClick={() => setSelectedStatus('all')}>All</button>
-        <button onClick={() => setSelectedStatus('want')}>Want to play</button>
-        <button onClick={() => setSelectedStatus('playing')}>Playing</button>
-        <button onClick={() => setSelectedStatus('completed')}>
-          Completed
+      <div className="status-filter">
+        <button
+          className={selectedStatus === 'all' ? 'active' : ''}
+          onClick={() => setSelectedStatus('all')}
+        >
+          <img
+            src="../public/images/all.png"
+            alt="mario-button"
+            className="mario-button"
+          />
         </button>
-        <button onClick={() => setSelectedStatus('dropped')}>Dropped</button>
+        <button
+          className={selectedStatus === 'want' ? 'active' : ''}
+          onClick={() => setSelectedStatus('want')}
+        >
+          <img
+            src="../public/images/want-to-play.png"
+            alt="want-button"
+            className="mario-button"
+          />
+        </button>
+        <button
+          className={selectedStatus === 'playing' ? 'active' : ''}
+          onClick={() => setSelectedStatus('playing')}
+        >
+          <img
+            src="../public/images/playing.png"
+            alt="playing-button"
+            className="mario-button"
+          />
+        </button>
+        <button
+          className={selectedStatus === 'completed' ? 'active' : ''}
+          onClick={() => setSelectedStatus('completed')}
+        >
+          <img
+            src="../public/images/completed.png"
+            alt="completed.png"
+            className="mario-button"
+          />
+        </button>
+        <button
+          className={selectedStatus === 'dropped' ? 'active' : ''}
+          onClick={() => setSelectedStatus('dropped')}
+        >
+          <img
+            src="../public/images/dropped.png"
+            alt="dropped-button"
+            className="mario-button"
+          />
+        </button>
       </div>
 
       {isLoading && <p>Loading games...</p>}

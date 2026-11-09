@@ -19,14 +19,19 @@ h2 {
 }
 
 button {
-  background-color: $button-background;
+  background-color: transparent;
   color: $button-color;
   padding: $button-padding;
   border: none;
   border-radius: $button-radius;
   cursor: pointer;
+  transition: transform 0.2s ease;
 
   &:hover {
-    background-color: $yellow;
+    transform: scale(1.1);
+  }
+
+  &.active {
+    transform: scale(1.5);
   }
 }

@@ -1,0 +1,12 @@
+@use './variables' as *;
+
+.header {
+  background-color: $dark;
+  color: $cream;
+}
+
+.header a {
+  color: $cream;
+  text-decoration: none;
+  margin-right: $spacing-medium;
+}

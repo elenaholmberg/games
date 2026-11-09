@@ -1,0 +1,16 @@
+.success-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background-color: rgb(0 0 0 / 45%);
+}
+
+.success-modal {
+  width: min(100%, 420px);
+  padding: 28px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 20%);
+}

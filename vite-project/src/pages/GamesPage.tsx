@@ -34,7 +34,7 @@ function GamesPage() {
 
   return (
     <div className="games-page">
-      <h1>My Games</h1>
+      <h1>Let's-a go!</h1>
 
       <div className="add-game-button">
         <Link to="/add-game">
@@ -57,11 +57,13 @@ function GamesPage() {
 
       {!isLoading && !error && games.length === 0 && <p>No games found.</p>}
 
-      {!isLoading &&
-        !error &&
-        games.map((currentGame) => (
-          <GameCard key={currentGame.id} gameData={currentGame} />
-        ))}
+      <div className="games-grid">
+        {!isLoading &&
+          !error &&
+          games.map((currentGame) => (
+            <GameCard key={currentGame.id} gameData={currentGame} />
+          ))}
+      </div>
     </div>
   );
 }

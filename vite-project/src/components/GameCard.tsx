@@ -1,5 +1,6 @@
 import type { Game } from '../types/game';
 import { Link } from 'react-router';
+import '../styles/hero.scss';
 
 type GameCardProps = {
   gameData: Game;

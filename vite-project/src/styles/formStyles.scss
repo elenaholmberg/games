@@ -15,10 +15,6 @@ form {
   }
 
   label {
-    font-size: 1.2rem;
-    font-family: 'Jersey 10', sans-serif;
-    font-weight: 400;
-    font-style: normal;
     color: $green;
   }
 
@@ -38,5 +34,12 @@ form {
 
 .add-game-page > h1,
 .edit-game-page > h1 {
-  margin-left: 20px;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.edit-game-page > h4 {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 0;
 }

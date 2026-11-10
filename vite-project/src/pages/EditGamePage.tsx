@@ -66,7 +66,8 @@ function EditGamePage() {
 
   return (
     <div className="edit-game-page">
-      <h1>Edit Game: {gameData.title}</h1>
+      <h1>Edit Game:</h1>
+      <h4>{gameData.title}</h4>
 
       {error && <p>{error}</p>}
 

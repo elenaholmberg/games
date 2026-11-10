@@ -1,14 +1,70 @@
+@use './variables.scss' as *;
+
 .game-card-link {
   display: block;
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  text-decoration: none;
+  padding-bottom: 1rem;
+
+  &:hover {
+    animation: game-card-shake 0.5s ease-in-out;
+  }
 
   img {
     display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
+  }
+  .subtitle {
+    color: $blue;
+    margin: 0.5rem 0;
+    padding-top: 1rem;
+  }
+
+  h4 {
+    color: $blue;
+    margin: 0.5rem 0;
+    padding: 1rem 0 0 ;
+  }
+
+  .value {
+    color: $dark;
+  }
+
+  .subtitle {
+    color: $green;
+    padding: 0;
+  }
+}
+
+@keyframes game-card-shake {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  20% {
+    transform: translateX(-3px) rotate(-1deg);
+  }
+
+  40% {
+    transform: translateX(3px) rotate(1deg);
+  }
+
+  60% {
+    transform: translateX(-2px) rotate(-0.5deg);
+  }
+
+  80% {
+    transform: translateX(2px) rotate(0.5deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-card-link:hover {
+    animation: none;
   }
 }

@@ -11,11 +11,19 @@ function GameCard({ gameData }: GameCardProps) {
     <Link to={`/games/${gameData.id}`} className="game-card-link">
       <img src={gameData.coverUrl} alt={gameData.title} />
 
-      <h2>{gameData.title}</h2>
-      <p>{gameData.platform}</p>
-      <p>{gameData.status}</p>
-      <p>Rating: {gameData.rating ?? 'Not rated'}</p>
-      <p>Notes: {gameData.notes}</p>
+      <h4>{gameData.title}</h4>
+      <p className="subtitle">
+        Platform: <span className="value">{gameData.platform}</span>
+      </p>
+      <p className="subtitle">
+        Status: <span className="value">{gameData.status}</span>
+      </p>
+      <p className="subtitle">
+        Rating: <span className="value">{gameData.rating ?? 'Not rated'}</span> ⭐
+      </p>
+      <p className="subtitle">
+        Notes: <span className="value">{gameData.notes}</span>
+      </p>
     </Link>
   );
 }

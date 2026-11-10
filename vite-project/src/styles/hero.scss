@@ -1,3 +1,5 @@
+@use './variables.scss' as *;
+
 //mobile first design
 
 .games-page {
@@ -7,6 +9,13 @@
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 16px;
+}
+
+h3 {
+  color: $green;
+  margin: 0;
+  padding-bottom: 2rem;
+
 }
 
 .status-filter {

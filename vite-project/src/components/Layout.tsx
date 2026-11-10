@@ -5,11 +5,7 @@ function Layout() {
     <div className="app">
       <nav className="header">
         <Link to="/" className="logo-link">
-          <img
-            className="logo"
-            src="../public/images/mushroom.png"
-            alt="Logo"
-          />
+          <img className="logo" src="../images/mushroom.png" alt="Logo" />
         </Link>
         <div className="nav-links">
           <Link to="/">My Games</Link>

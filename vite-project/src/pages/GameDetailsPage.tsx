@@ -58,17 +58,40 @@ function GameDetailsPage() {
 
       <img src={gameData.coverUrl} alt={gameData.title} />
 
-      <p>Platform: {gameData.platform}</p>
-      <p>Rating: {gameData.rating ?? 'Not rated'}</p>
-      <p>Notes: {gameData.notes}</p>
+      <p className="subtitle">
+        Platform: <span className="value">{gameData.platform}</span>
+      </p>
+      <p className="subtitle">
+        Status: <span className="value">{gameData.status}</span>
+      </p>
+      <p className="subtitle">
+        Rating: <span className="value">{gameData.rating ?? 'Not rated'}</span>{' '}
+        ⭐
+      </p>
+      <p className="subtitle">
+        Notes: <span className="value">{gameData.notes}</span>
+      </p>
 
       {error && <p>{error}</p>}
 
-      <Link to={`/games/${gameData.id}/edit`}>Edit Game</Link>
+    <div className="button-container">  
+      <Link to={`/games/${gameData.id}/edit`}>
+        {' '}
+        <img
+          src="../public/images/want-to-play.png"
+          alt="want-button"
+          className="mario-button"
+        />
+      </Link>
 
       <button onClick={handleDelete} disabled={isDeleting}>
-        Delete Game
+        <img
+          src="../public/images/want-to-play.png"
+          alt="want-button"
+          className="mario-button"
+        />
       </button>
+      </div>
 
       {isDeleting && (
         <div className="loading-modal-backdrop">

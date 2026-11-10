@@ -77,7 +77,7 @@ function GameDetailsPage() {
       <div className="button-container">
         <Link to={`/games/${gameData.id}/edit`}>
           <img
-            src="../public/images/edit-star.png"
+            src="./images/edit-star.png"
             alt="want-button"
             className="mario-button"
           />
@@ -85,7 +85,7 @@ function GameDetailsPage() {
 
         <button onClick={handleDelete} disabled={isDeleting}>
           <img
-            src="../public/images/edit-star.png"
+            src="../images/edit-star.png"
             alt="want-button"
             className="mario-button"
           />

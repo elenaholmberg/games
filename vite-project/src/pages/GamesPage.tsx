@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router';
 import type { Game } from '../types/game';
 import { fetchGames } from '../services/gamesApi';
 import GameCard from '../components/GameCard';

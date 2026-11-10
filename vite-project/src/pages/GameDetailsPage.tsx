@@ -77,7 +77,7 @@ function GameDetailsPage() {
       <div className="button-container">
         <Link to={`/games/${gameData.id}/edit`}>
           <img
-            src="./images/edit-star.png"
+            src="../images/edit-star.png"
             alt="want-button"
             className="mario-button"
           />

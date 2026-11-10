@@ -50,7 +50,7 @@ function GamesPage() {
           onClick={() => setSelectedStatus('all')}
         >
           <img
-            src="../public/images/all.png"
+            src="../images/all.png"
             alt="mario-button"
             className="mario-button"
           />
@@ -60,7 +60,7 @@ function GamesPage() {
           onClick={() => setSelectedStatus('want')}
         >
           <img
-            src="../public/images/want-to-play.png"
+            src="../images/want-to-play.png"
             alt="want-button"
             className="mario-button"
           />
@@ -70,7 +70,7 @@ function GamesPage() {
           onClick={() => setSelectedStatus('playing')}
         >
           <img
-            src="../public/images/playing.png"
+            src="../images/playing.png"
             alt="playing-button"
             className="mario-button"
           />
@@ -80,7 +80,7 @@ function GamesPage() {
           onClick={() => setSelectedStatus('completed')}
         >
           <img
-            src="../public/images/completed.png"
+            src="../images/completed.png"
             alt="completed.png"
             className="mario-button"
           />
@@ -90,7 +90,7 @@ function GamesPage() {
           onClick={() => setSelectedStatus('dropped')}
         >
           <img
-            src="../public/images/dropped.png"
+            src="../images/dropped.png"
             alt="dropped-button"
             className="mario-button"
           />

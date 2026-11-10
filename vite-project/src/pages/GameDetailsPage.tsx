@@ -74,23 +74,22 @@ function GameDetailsPage() {
 
       {error && <p>{error}</p>}
 
-    <div className="button-container">  
-      <Link to={`/games/${gameData.id}/edit`}>
-        {' '}
-        <img
-          src="../public/images/want-to-play.png"
-          alt="want-button"
-          className="mario-button"
-        />
-      </Link>
+      <div className="button-container">
+        <Link to={`/games/${gameData.id}/edit`}>
+          <img
+            src="../public/images/edit-star.png"
+            alt="want-button"
+            className="mario-button"
+          />
+        </Link>
 
-      <button onClick={handleDelete} disabled={isDeleting}>
-        <img
-          src="../public/images/want-to-play.png"
-          alt="want-button"
-          className="mario-button"
-        />
-      </button>
+        <button onClick={handleDelete} disabled={isDeleting}>
+          <img
+            src="../public/images/edit-star.png"
+            alt="want-button"
+            className="mario-button"
+          />
+        </button>
       </div>
 
       {isDeleting && (

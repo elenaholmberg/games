@@ -1,7 +1,10 @@
 @use './variables.scss' as *;
 
 .game-details-page {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   width: 100%;
   min-width: 0;
   box-sizing: border-box;
@@ -9,37 +12,52 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
-img {
+
+.game-details-page img {
   display: block;
-  width: 100%;
+  width: 50%;
   max-width: 100%;
   height: auto;
 }
 
-.value {
+.game-details-page .value {
   color: $dark;
 }
 
+.button-container > a {
+  display: inline-block;
+  padding: 0;
+}
 
-h4 {
+.game-details-page h4 {
   color: $blue;
   margin: 0.5rem 0;
   padding: 1rem 0 0;
 }
 
-.value {
-  color: $dark;
-}
-
-.subtitle {
+.game-details-page .subtitle {
   color: $green;
   padding: 0;
   margin: 0.5rem 0;
-  
 }
 
 .button-container {
   display: flex;
+  align-items: center;
+  gap: 0;
   margin-top: 1rem;
   margin-bottom: 3rem;
+}
+
+.button-container > a,
+.button-container > button {
+  display: block;
+  width: 120px;
+  margin: 0;
+  padding: 0;
+}
+
+.button-container img {
+  width: 100%;
+  max-width: none;
 }

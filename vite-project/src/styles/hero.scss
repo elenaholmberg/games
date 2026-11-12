@@ -15,7 +15,6 @@ h3 {
   color: $green;
   margin: 0;
   padding-bottom: 2rem;
-
 }
 
 .status-filter {
@@ -23,7 +22,7 @@ h3 {
   flex-wrap: wrap;
   justify-content: left;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 2rem;
 
   button {
     padding: 0;
@@ -59,10 +58,54 @@ h3 {
   .games-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .games-description-box {
+    width: 50%;
+  }
+  .games-page h2 {
+    font-size: 1.5rem;
+  }
+
+  .games-page h3 {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .games-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .games-text-flexer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .games-description-box {
+    padding-bottom: 2rem;
+  }
+
+  .games-subtitle-box {
+    margin-right: 10rem;
+  }
+
+  .games-subtitle-box h3 {
+    font-size: 2.5rem;
+    transform: rotate(-25deg);
+    transform-origin: center;
+    animation: subtitle-pulse 1.8s ease-in-out infinite;
+  }
+}
+
+@keyframes subtitle-pulse {
+  0%,
+  100% {
+    transform: rotate(-25deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-25deg) scale(1.08);
   }
 }

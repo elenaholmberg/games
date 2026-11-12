@@ -66,18 +66,18 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 
 ## Design och extra funktioner
 
-- [ ] Bestämma appens visuella stil
-- [ ] Skapa layout för spellistan
-- [ ] Skapa design för spelkorten
-- [ ] Göra appen responsiv
-- [ ] Eventuella egna funktioner
+- [x] Bestämma appens visuella stil
+- [x] Skapa layout för spellistan
+- [x] Skapa design för spelkorten
+- [x] Göra appen responsiv
+- [x] Eventuella egna funktioner
 
 ## Publicering och inlämning
 
-- [ ] Deploya appen på Vercel
+- [x] Deploya appen på Vercel
 - [ ] Skriva färdig README
 - [x] Kontrollera att alla funktioner fungerar
-- [ ] Kontrollera att API-anropen fungerar i den publicerade appen
+- [x] Kontrollera att API-anropen fungerar i den publicerade appen
 
 ## Bedömning
 
@@ -88,7 +88,7 @@ En personlig spelbacklog där användaren kan hålla koll på spel som hen vill 
 - [x] Routing och navigering
 - [x] Laddning och felhantering
 - [x] TypeScript-typ för spel
-- [ ] Publicerad app på Vercel
+- [x] Publicerad app på Vercel
 
 ### VG
 

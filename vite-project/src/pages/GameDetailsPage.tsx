@@ -78,16 +78,16 @@ function GameDetailsPage() {
         <Link to={`/games/${gameData.id}/edit`}>
           <img
             src="../images/edit-star.png"
-            alt="want-button"
-            className="mario-button"
+            alt="edit-button"
+            className="edit-star"
           />
         </Link>
 
         <button onClick={handleDelete} disabled={isDeleting}>
           <img
-            src="../images/edit-star.png"
-            alt="want-button"
-            className="mario-button"
+            src="../images/delete-star.png"
+            alt="delete-button"
+            className="delete-star"
           />
         </button>
       </div>

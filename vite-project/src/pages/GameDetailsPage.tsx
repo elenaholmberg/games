@@ -54,52 +54,58 @@ function GameDetailsPage() {
 
   return (
     <div className="game-details-page">
-      <h1>{gameData.title}</h1>
+      <div className="game-details-container">
+        <div className="game-details-header">
+          <h1>{gameData.title}</h1>
 
-      <img src={gameData.coverUrl} alt={gameData.title} />
+          <img src={gameData.coverUrl} alt={gameData.title} />
+        </div>
 
-      <p className="subtitle">
-        Platform: <span className="value">{gameData.platform}</span>
-      </p>
-      <p className="subtitle">
-        Status: <span className="value">{gameData.status}</span>
-      </p>
-      <p className="subtitle">
-        Rating: <span className="value">{gameData.rating ?? 'Not rated'}</span>{' '}
-        ⭐
-      </p>
-      <p className="subtitle">
-        Notes: <span className="value">{gameData.notes}</span>
-      </p>
+        <div className="game-details-info">
+          <p className="subtitle">
+            Platform: <span className="value">{gameData.platform}</span>
+          </p>
+          <p className="subtitle">
+            Status: <span className="value">{gameData.status}</span>
+          </p>
+          <p className="subtitle">
+            Rating:{' '}
+            <span className="value">{gameData.rating ?? 'Not rated'}</span> ⭐
+          </p>
+          <p className="subtitle">
+            Notes: <span className="value">{gameData.notes}</span>
+          </p>
 
-      {error && <p>{error}</p>}
+          {error && <p>{error}</p>}
 
-      <div className="button-container">
-        <Link to={`/games/${gameData.id}/edit`}>
-          <img
-            src="../images/edit-star.png"
-            alt="edit-button"
-            className="edit-star"
-          />
-        </Link>
+          <div className="button-container">
+            <Link to={`/games/${gameData.id}/edit`}>
+              <img
+                src="../images/edit-star.png"
+                alt="edit-button"
+                className="edit-star"
+              />
+            </Link>
 
-        <button onClick={handleDelete} disabled={isDeleting}>
-          <img
-            src="../images/delete-star.png"
-            alt="delete-button"
-            className="delete-star"
-          />
-        </button>
-      </div>
-
-      {isDeleting && (
-        <div className="loading-modal-backdrop">
-          <div className="loading-modal" role="alert" aria-live="assertive">
-            <h2>Deleting game...</h2>
-            <p>Please wait while your game is being deleted.</p>
+            <button onClick={handleDelete} disabled={isDeleting}>
+              <img
+                src="../images/delete-star.png"
+                alt="delete-button"
+                className="delete-star"
+              />
+            </button>
           </div>
         </div>
-      )}
+
+        {isDeleting && (
+          <div className="loading-modal-backdrop">
+            <div className="loading-modal" role="alert" aria-live="assertive">
+              <h2>Deleting game...</h2>
+              <p>Please wait while your game is being deleted.</p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

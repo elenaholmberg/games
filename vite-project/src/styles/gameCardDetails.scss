@@ -13,6 +13,18 @@
   padding-right: 1rem;
 }
 
+.game-details-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-details-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .game-details-page img {
   display: block;
   width: 50%;
@@ -39,6 +51,10 @@
   color: $green;
   padding: 0;
   margin: 0.5rem 0;
+}
+
+.game-details-page h1 {
+  font-size: clamp(1.8rem, 3vw, 4rem);
 }
 
 .button-container {
@@ -73,5 +89,59 @@
     &:hover {
       transform: scale(1.1);
     }
+  }
+}
+
+//tablet
+
+@media (min-width: 500px) {
+  .game-details-page h1 {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .game-details-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .game-details-page img {
+    display: block;
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .game-details-info {
+    margin-top: 15rem;
+    margin-right: 5rem;
+  }
+
+  .game-details-page h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .game-details-page h1 {
+    font-size: 3rem;
+    width: 600px;
+    height: auoto;
+  }
+
+  .game-details-info {
+    margin-top: 18rem;
+    margin-right: 5rem;
+  }
+
+  .game-details-info p {
+    font-size: 2.5rem;
+  }
+
+  .game-details-info span {
+    font-size: 2.5rem;
   }
 }

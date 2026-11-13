@@ -11,6 +11,10 @@
   gap: 16px;
 }
 
+.games-page h1 {
+  margin-bottom: 0;
+}
+
 h3 {
   color: $green;
   margin: 0;
@@ -55,19 +59,46 @@ h3 {
 }
 
 @media (min-width: 768px) {
+  .games-page {
+    margin: 40px;
+  }
+
   .games-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .games-text-flexer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
   .games-description-box {
-    width: 50%;
+    width: 60%;
+  }
+
+  .games-subtitle-box h3 {
+    font-size: 2.5rem;
+    transform: rotate(-25deg);
+    transform-origin: center;
+    animation: subtitle-pulse 1.8s ease-in-out infinite;
+  }
+
+  .games-subtitle-box {
+    margin-right: 6rem;
   }
   .games-page h2 {
     font-size: 1.5rem;
   }
 
   .games-page h3 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+
+  .games-description-box {
+    width: 50%;
   }
 }
 
@@ -76,26 +107,8 @@ h3 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .games-text-flexer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   .games-description-box {
     padding-bottom: 2rem;
-  }
-
-  .games-subtitle-box {
-    margin-right: 10rem;
-  }
-
-  .games-subtitle-box h3 {
-    font-size: 2.5rem;
-    transform: rotate(-25deg);
-    transform-origin: center;
-    animation: subtitle-pulse 1.8s ease-in-out infinite;
   }
 }
 

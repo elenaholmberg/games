@@ -66,12 +66,19 @@ function EditGamePage() {
 
   return (
     <div className="edit-game-page">
-      <h1>Edit Game:</h1>
-      <h4>{gameData.title}</h4>
+      <h1>Edit Game</h1>
 
       {error && <p>{error}</p>}
 
       <form onSubmit={handleSubmit}>
+        <label htmlFor="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={gameData.title}
+          readOnly
+        />
         <label htmlFor="status">Status:</label>
         <select
           id="status"

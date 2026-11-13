@@ -43,3 +43,32 @@ form {
   margin-bottom: 1rem;
   padding-top: 0;
 }
+
+@media (min-width: 768px) {
+  form {
+    width: 50%;
+  }
+
+  .add-game-page,
+  .edit-game-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 4rem;
+  }
+
+  .add-game-page > h1,
+  .edit-game-page > h1 {
+    font-size: 3rem;
+    margin-right: 0.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .add-game-page > h1,
+  .edit-game-page > h1 {
+    font-size: 5rem;
+    margin-right: 0.8rem;
+  }
+}

@@ -4,7 +4,11 @@
 A personal Super Mario game backlog where you can keep track of the games you want to play, are currently playing, have completed, or decided to drop.
 
 Questlog makes it easy to organize your gaming library, rate your games, add personal notes, and keep track of your gaming journey.
+
+
 <img width="802" height="1072" alt="Skärmavbild 2026-11-13 kl  10 09 26" src="https://github.com/user-attachments/assets/ae9e1b7f-a930-4a93-8968-4a6202b9fce9" />
+
+
 
 ## Features
 
